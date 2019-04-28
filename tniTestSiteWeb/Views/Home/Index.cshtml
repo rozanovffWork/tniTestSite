@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>Точка измерения</h2>
+        <ul>
+            <li>@Html.ActionLink("Список точек измерения", "Index", "ElectricityMeasurementPoint")</li>
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h2>Расчетные приборы учета</h2>
+        <ul>
+            <li>@Html.ActionLink("Выбрать все расчетные приборы учета в 2018 году.","GetEMDeviceByYear","Reports", new {year=2018})</li>
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h2>Объекты потребления</h2>
+        <ul>
+            <li>@Html.ActionLink("Список объектов потребления", "GetConsumptionObjects", "Reports")</li>
+        </ul>
+    </div>
+</div>

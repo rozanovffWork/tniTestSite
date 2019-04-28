@@ -1,0 +1,47 @@
+﻿@model IEnumerable<tniTestSite.Api.ConsumptionObjectReport.PowerTransformerViewModel>
+
+@{
+    ViewData["Title"] = "GetExpiredPowerTransformator";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Трансформаторы тока с закончившимся сроком поверке</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PowerTransformerType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PowerTransformationRatio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VerificationDate)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PowerTransformerType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PowerTransformationRatio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VerificationDate)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

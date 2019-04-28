@@ -1,0 +1,40 @@
+﻿@model IEnumerable<tniTestSite.Api.ConsumptionObjectReport.ElectricEnergyMeterViewModel>
+
+@{
+    ViewData["Title"] = "GetExpiredEnergyMeters";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Cчетчики с закончившимся сроком поверке</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CounterType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VerificationDate)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CounterType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VerificationDate)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

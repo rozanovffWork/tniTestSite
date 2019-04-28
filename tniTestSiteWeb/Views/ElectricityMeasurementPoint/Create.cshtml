@@ -1,0 +1,122 @@
+﻿@model tniTestSite.Api.ElectricityMeasurementPoints.ElectricityMeasurementPointInputModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<h4>ElectricityMeasurementPointInputModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConsumptionObjectId" class="control-label"></label>
+                <select asp-for="ConsumptionObjectId" class="form-control" asp-items="ViewBag.ConsumptionObjects"></select>
+                <span asp-validation-for="ConsumptionObjectId" class="text-danger"></span>
+            </div>
+            
+            
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#panel1">Счетчик электрической энергии</a></li>
+                <li><a data-toggle="tab" href="#panel2">Трансформатор тока</a></li>
+                <li><a data-toggle="tab" href="#panel3">Трансформатор напряжения</a></li>
+            </ul>
+ 
+            <div class="tab-content">
+                <div id="panel1" class="tab-pane fade in active">
+                    <h3>Счетчик электрической энергии</h3>
+                    <div class="form-group">
+                        <label asp-for="ElectricEnergyMeter.CounterType" class="control-label"></label>
+                        <input asp-for="ElectricEnergyMeter.CounterType" class="form-control" />
+                        <span asp-validation-for="ElectricEnergyMeter.CounterType" class="text-danger"></span>
+                    </div>
+            
+                    <div class="form-group">
+                        <label asp-for="ElectricEnergyMeter.Number" class="control-label"></label>
+                        <input asp-for="ElectricEnergyMeter.Number" class="form-control" />
+                        <span asp-validation-for="ElectricEnergyMeter.Number" class="text-danger"></span>
+                    </div>
+            
+                    <div class="form-group">
+                        <label asp-for="ElectricEnergyMeter.VerificationDate" class="control-label"></label>
+                        <input asp-for="ElectricEnergyMeter.VerificationDate" class="form-control" />
+                        <span asp-validation-for="ElectricEnergyMeter.VerificationDate" class="text-danger"></span>
+                    </div>
+                </div>
+                <div id="panel2" class="tab-pane fade">
+                    <h3>Трансформатор тока</h3>
+                    <div class="form-group">
+                        <label asp-for="PowerTransformer.PowerTransformerType" class="control-label"></label>
+                        <input asp-for="PowerTransformer.PowerTransformerType" class="form-control" />
+                        <span asp-validation-for="PowerTransformer.PowerTransformerType" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="PowerTransformer.PowerTransformationRatio" class="control-label"></label>
+                        <input asp-for="PowerTransformer.PowerTransformationRatio" class="form-control" />
+                        <span asp-validation-for="PowerTransformer.PowerTransformationRatio" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="PowerTransformer.Number" class="control-label"></label>
+                        <input asp-for="PowerTransformer.Number" class="form-control" />
+                        <span asp-validation-for="PowerTransformer.Number" class="text-danger"></span>
+                    </div>
+            
+                    <div class="form-group">
+                        <label asp-for="PowerTransformer.VerificationDate" class="control-label"></label>
+                        <input asp-for="PowerTransformer.VerificationDate" class="form-control" />
+                        <span asp-validation-for="PowerTransformer.VerificationDate" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div id="panel3" class="tab-pane fade">
+                    <h3>Трансформатор напряжения</h3>
+                    <div class="form-group">
+                        <label asp-for="VoltageTransformer.VoltageTransformerType" class="control-label"></label>
+                        <input asp-for="VoltageTransformer.VoltageTransformerType" class="form-control" />
+                        <span asp-validation-for="VoltageTransformer.VoltageTransformerType" class="text-danger"></span>
+                    </div>
+            
+                    <div class="form-group">
+                        <label asp-for="VoltageTransformer.VoltageTransformationRatio" class="control-label"></label>
+                        <input asp-for="VoltageTransformer.VoltageTransformationRatio" class="form-control" />
+                        <span asp-validation-for="VoltageTransformer.VoltageTransformationRatio" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="VoltageTransformer.Number" class="control-label"></label>
+                        <input asp-for="VoltageTransformer.Number" class="form-control" />
+                        <span asp-validation-for="VoltageTransformer.Number" class="text-danger"></span>
+                    </div>
+            
+                    <div class="form-group">
+                        <label asp-for="VoltageTransformer.VerificationDate" class="control-label"></label>
+                        <input asp-for="VoltageTransformer.VerificationDate" class="form-control" />
+                        <span asp-validation-for="VoltageTransformer.VerificationDate" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            
+
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
